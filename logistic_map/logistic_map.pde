@@ -8,7 +8,7 @@
   xt+1 = r*xt*(1-xt);
 */
 
-float r = 2; // equivale a r na fórmula de referência
+float r = 3.5; // equivale a r na fórmula de referência
 float basext = 0.2; // equivale a xt na fórmula de referência
 float xt = basext; // valor a ser atualizado
 
