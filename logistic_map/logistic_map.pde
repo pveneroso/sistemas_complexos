@@ -42,11 +42,11 @@ void draw(){
   ellipse(current_point.x, current_point.y, radius*2, radius*2);
   
   // plotagem dos pontos seguintes segundo número de iterações configurado
-  for(int i = 1; i<iterations; i++){
+  for(int i = 1; i < iterations; i++){
     // cálculo de xt a cada momento e conversão para posição no canvas
     next_point.x = offset+(i * spacing);
     float xt1 = r*xt*(1-xt);
-    next_point.y = map(xt1, 0, 1, height-100, 100);
+    next_point.y = map(xt1, 0, 1, height-offset*2, offset*2);
     xt = xt1;
     
     // desenho do ponto no gráfico
@@ -67,6 +67,9 @@ void draw(){
   //r+=inc;      // descomentar para atualizar o valor de r a cada
                  // iteração do draw() com base na variável inc
                  // - Mostra evolução do gráfico em relação a um valor de r crescente
+  
+  basext = constrain(basext, 0.0, 1.0);
+  r = constrain(r, 0, 4.0);
   
   xt = basext; // reseta o xt em relação ao valor configurado no cabeçalho
   
